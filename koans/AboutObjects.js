@@ -3,7 +3,7 @@ describe("About Objects", function () {
   beforeEach(function () {  
     // by using sinon we assure that new Date will always
     // return a 2012 date
-    this.clock = sinon.useFakeTimers(1350406916129);  // 1350406916129 --> 16/19/2012
+    this.clock = sinon.useFakeTimers(1350406916129);  // 1350406916129 --> 16/10/2012
   });
   
   afterEach(function () {
