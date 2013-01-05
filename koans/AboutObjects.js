@@ -1,4 +1,14 @@
 describe("About Objects", function () {
+  
+  beforeEach(function () {  
+    // by using sinon we assure that new Date will always
+    // return a 2012 date
+    this.clock = sinon.useFakeTimers(1350406916129);  // 1350406916129 --> 16/19/2012
+  });
+  
+  afterEach(function () {
+    this.clock.restore();
+  });
 
   describe("Properties", function () {
     var meglomaniac;
@@ -33,8 +43,10 @@ describe("About Objects", function () {
   });
 
   it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
+        
     var currentDate = new Date()
     var currentYear = (currentDate.getFullYear());
+    
     var meglomaniac = {
       mastermind: "James Wood",
       henchman: "Adam West",
